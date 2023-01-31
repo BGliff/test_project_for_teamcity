@@ -23,7 +23,6 @@ def get_weather(request):
         response = requests.get(url=f'{WEATHER_BASE_URL}/find',
                                 params={'q': city, 'type': 'like', 'units': 'metric', 'APPID': WEATHER_API_KEY})
         data = response.json()
-
         city_id = data['list'][0]['id']
 
         res = requests.get(f'{WEATHER_BASE_URL}/weather',
