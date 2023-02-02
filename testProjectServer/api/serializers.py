@@ -46,6 +46,7 @@ class ClientItemSerializer(serializers.Serializer):
 
 @dataclass
 class ClientItem(object):
+
     id: int
     first_name: str
     last_name: str
