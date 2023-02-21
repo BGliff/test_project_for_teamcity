@@ -1,4 +1,4 @@
-ARG env_TEST_PARAMETER
+ARG env_TEST_PARAMETER='localhost:8083'
 
 FROM $env_TEST_PARAMETER/python:3.9
 
