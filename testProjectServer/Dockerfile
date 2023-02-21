@@ -1,6 +1,7 @@
 ARG TEST_PARAMETER
+LABEL host="${TEST_PARAMETER}"
 
-FROM ${env.TEST_PARAMETER}/python:3.9
+FROM ${host}/python:3.9
 
 WORKDIR usr/src/app
 
