@@ -1,4 +1,4 @@
-FROM ${DOCKER_HOST}/python:3.9
+FROM $DOCKER_HOST/python:3.9
 
 WORKDIR usr/src/app
 
