@@ -1,13 +1,11 @@
-FROM ${TEST_PARAMETER}/python:3.9
+FROM $TEST_PARAMETER/python:3.9
 
 WORKDIR usr/src/app
 
 COPY requirements.txt ./
 COPY pip.conf /etc/pip.conf
 
-RUN export NEXUS_CI_USER=$NEXUS_CI_USER
-RUN export NEXUS_CI_PASSWORD=$NEXUS_CI_PASSWORD
-RUN export NEXUS_PYPI_URL=$NEXUS_PYPI_URL
+RUN echo $TEST_PARAMETER
 RUN pip install -r requirements.txt
 
 COPY . .
