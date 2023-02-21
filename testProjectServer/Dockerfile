@@ -1,4 +1,4 @@
-FROM ${USER}/python:3.9
+FROM localhost:8083/python:3.9
 
 WORKDIR usr/src/app
 
