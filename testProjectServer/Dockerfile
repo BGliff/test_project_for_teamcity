@@ -1,11 +1,10 @@
-FROM $TEST_PARAMETER/python:3.9
+FROM $env.TEST_PARAMETER/python:3.9
 
 WORKDIR usr/src/app
 
 COPY requirements.txt ./
 COPY pip.conf /etc/pip.conf
 
-RUN echo $TEST_PARAMETER
 RUN pip install -r requirements.txt
 
 COPY . .
