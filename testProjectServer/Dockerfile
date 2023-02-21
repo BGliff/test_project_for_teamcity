@@ -1,6 +1,6 @@
 ARG TEST_PARAMETER
 
-FROM $TEST_PARAMETER/python:3.9
+FROM ${TEST_PARAMETER}/python:3.9
 
 WORKDIR usr/src/app
 
