@@ -1,11 +1,10 @@
-FROM localhost:8083/python:3.9
+FROM ${DOCKER_HOST}/python:3.9
 
 WORKDIR usr/src/app
 
 COPY requirements.txt ./
 COPY pip.conf /etc/pip.conf
 
-RUN echo 'http://${NEXUS_CI_USER}:${NEXUS_CI_PASSWRD}@${NEXUS_PYPI_URL}/pypi'
 RUN pip install -r requirements.txt
 
 COPY . .
