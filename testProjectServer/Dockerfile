@@ -5,12 +5,14 @@ FROM $TEST_PARAMETER/python:3.9
 
 WORKDIR usr/src/app
 
-ENV NEXUS_PYPI_URL $NEXUS_PYPI_URL
+#ENV NEXUS_PYPI_URL $NEXUS_PYPI_URL
 
 COPY requirements.txt ./
-COPY pip.conf /etc/pip.conf
+# COPY pip.conf /etc/pip.conf
 
-RUN pip install -r requirements.txt
+
+RUN pip install --index-url http://test:ffilgecurb@${NEXUS_PYPI_URL}/simple \
+    --extra-index-url http://test:ffilgecurb@${NEXUS_PYPI_URL}/simple -r requirements.txt
 
 COPY . .
 
