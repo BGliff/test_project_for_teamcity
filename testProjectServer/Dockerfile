@@ -11,9 +11,9 @@ COPY requirements.txt ./
 # COPY pip.conf /etc/pip.conf
 
 
-RUN pip install --index http://test:ffilgecurb@$NEXUS_PYPI_URL/simple \
-    --extra-index-url http://test:ffilgecurb@$NEXUS_PYPI_URL/simple \
-    --extra-index-url http://test:ffilgecurb@${NEXUS_PYPI_URL}/pypi \
+RUN pip install --index 'http://test:ffilgecurb@$NEXUS_PYPI_URL/simple' \
+    --extra-index-url 'http://test:ffilgecurb@$NEXUS_PYPI_URL/simple' \
+    --extra-index-url 'http://test:ffilgecurb@$NEXUS_PYPI_URL/pypi' \
     -r requirements.txt
 
 COPY . .
