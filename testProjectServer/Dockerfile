@@ -4,6 +4,8 @@ FROM $TEST_PARAMETER/python:3.9
 
 WORKDIR usr/src/app
 
+ENV NEXUS_PYPI_URL $NEXUS_PYPI_URL
+
 COPY requirements.txt ./
 COPY pip.conf /etc/pip.conf
 
