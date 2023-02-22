@@ -11,10 +11,10 @@ COPY requirements.txt ./
 # COPY pip.conf /etc/pip.conf
 
 
-RUN pip install --index http://test:ffilgecurb@$NEXUS_PYPI_URL/simple \
-    --extra-index-url http://test:ffilgecurb@$NEXUS_PYPI_URL/simple \
-    --extra-index-url http://test:ffilgecurb@$NEXUS_PYPI_URL/pypi \
-    --trusted-host $NEXUS_PYPI_URL \
+RUN pip install --index 'http://test:ffilgecurb@$NEXUS_PYPI_URL/simple' \
+    --extra-index-url 'http://test:ffilgecurb@$NEXUS_PYPI_URL/simple' \
+    --extra-index-url 'http://test:ffilgecurb@$NEXUS_PYPI_URL/pypi' \
+    --trusted-host '$NEXUS_PYPI_URL' \
     -r requirements.txt
 
 COPY . .
